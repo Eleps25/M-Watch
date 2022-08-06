@@ -11,6 +11,7 @@ const HomePage = () => {
     return (
         <ScrollView>
             <Text>Home Page</Text>
+
         </ScrollView>
     )
 }
