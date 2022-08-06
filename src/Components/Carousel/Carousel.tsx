@@ -1,18 +1,38 @@
-import { FlatList } from 'react-native';
+import { View, FlatList, Text } from 'react-native';
 
-import styles from './Carousel.style'
+import Asset from '../Asset/index';
 
-const renderAsset = () => {
-    //return Asset component
+import styles from './Carousel.style';
+
+interface Carousel {
+    title: string,
+    items: [
+        id: number,
+        title: string,
+        year: string,
+        duration: string,
+        genres: string[],
+        director: string,
+        actors: string,
+        plot: string,
+        posterUrl: string
+    ]
 }
 
-const Carousel = ({ data }) => {
+const Carousel = ({ title, items }: Carousel) => {
+    const renderAsset = (itemData: any) => {
+        return <Asset title={itemData.item.title} imageURL={itemData.item.posterUrl} />
+    }
     return (
-        <FlatList
-            data={data}
-            keyExtractor={(item: any) => item.title}
-            renderItem={renderAsset}
-        />
+        <View>
+            <Text>{title}</Text>
+            <FlatList
+                data={items}
+                keyExtractor={(item: any) => item.title}
+                renderItem={renderAsset}
+                horizontal
+            />
+        </View>
     )
 }
 
