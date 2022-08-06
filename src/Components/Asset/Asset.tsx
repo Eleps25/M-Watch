@@ -4,17 +4,17 @@ import styles from './Asset.style'
 
 interface Asset {
     title: string,
-    image: string
+    imageURL: string
 }
 
-const Asset = ({ title, image }: Asset) => {
+const Asset = ({ title, imageURL }: Asset) => {
     return (
         <Pressable onPress={() => { console.log("Pressed") }}>
-            <Text>{title}</Text>
             <Image
                 style={styles.image}
-                source={{ uri: `${image}` }}
+                source={{ uri: `${imageURL}` }}
             />
+            <Text>{title}</Text>
         </Pressable>
     )
 }
