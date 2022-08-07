@@ -1,9 +1,25 @@
-import { ScrollView, Text } from 'react-native';
-import { useState, useEffect } from 'react';
+import { ScrollView, Text, ActivityIndicator } from 'react-native';
 
 import useApiFetch from '../../CustomHooks/useApiFetch';
 
+import Carousel from '../../Components/Carousel/index';
+
 import styles from './HomePage.style'
+
+interface CarouselData {
+    title: string,
+    items: [
+        id: number,
+        title: string,
+        year: string,
+        duration: string,
+        genres: string[],
+        director: string,
+        actors: string,
+        plot: string,
+        posterUrl: string
+    ]
+}
 
 const HomePage = () => {
     const { data, isLoad } = useApiFetch('https://raw.githubusercontent.com/24i/smartapps-test/main/data.json');
@@ -11,7 +27,7 @@ const HomePage = () => {
     return (
         <ScrollView>
             <Text>Home Page</Text>
-
+            {isLoad ? data.carousels.map((carousel: CarouselData) => { return <Carousel key={carousel.title} title={carousel.title} items={carousel.items} /> }) : <ActivityIndicator />}
         </ScrollView>
     )
 }
