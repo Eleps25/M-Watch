@@ -22,7 +22,7 @@ interface CarouselData {
 }
 
 const HomePage = () => {
-    const { data, isLoad } = useApiFetch('https://raw.githubusercontent.com/24i/smartapps-test/main/data.json');
+    const { data, isLoad }: { data: any, isLoad: boolean } = useApiFetch('https://raw.githubusercontent.com/24i/smartapps-test/main/data.json');
 
     return (
         <ScrollView>
