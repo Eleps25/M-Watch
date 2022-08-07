@@ -33,14 +33,15 @@ const DetailPage = () => {
                 <ImageBackground
                     source={{ uri: `${posterUrl}` }}
                     style={styles.image}
+                    resizeMode='cover'
                 >
-                    <Text>{title}</Text>
+                    <Text style={styles.imageText}>{title}</Text>
                 </ImageBackground>
             </View>
-            <View>
-                <Text>Year: {year}</Text>
-                <Text>Duration: {duration} min</Text>
-                <Text>Plot: {plot}</Text>
+            <View style={styles.infoContainer}>
+                <Text style={styles.infoText}><Text style={styles.infoBoldText}>Year:</Text> {year}</Text>
+                <Text style={styles.infoText}><Text style={styles.infoBoldText}>Duration:</Text> {duration} min</Text>
+                <Text style={styles.infoText}><Text style={styles.infoBoldText}>Plot:</Text> {plot}</Text>
             </View>
         </View>
     )
