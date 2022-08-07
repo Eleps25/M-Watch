@@ -1,10 +1,11 @@
 import { StatusBar } from 'expo-status-bar';
+import NavigationRoutes from './Navigation/NavigationRoutes';
 
 const Application = () => {
     return (
         <>
             <StatusBar />
-            {/*There will be navigation component*/}
+            <NavigationRoutes />
         </>
     )
 }
