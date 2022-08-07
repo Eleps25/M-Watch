@@ -4,7 +4,22 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import HomePage from '../Screens/HomePage/index';
 import DetailPage from '../Screens/DetailPage/index';
 
-const Stack = createNativeStackNavigator();
+export type StackParams = {
+    HomePage: undefined,
+    DetailPage: [
+        id: number,
+        title: string,
+        year: string,
+        duration: string,
+        genres: string[],
+        director: string,
+        actors: string,
+        plot: string,
+        posterUrl: string
+    ]
+}
+
+const Stack = createNativeStackNavigator<StackParams>();
 
 const NavigationRoutes = () => {
     return (
