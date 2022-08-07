@@ -26,7 +26,6 @@ const HomePage = () => {
 
     return (
         <ScrollView>
-            <Text>Home Page</Text>
             {isLoad ? data.carousels.map((carousel: CarouselData) => { return <Carousel key={carousel.title} title={carousel.title} items={carousel.items} /> }) : <ActivityIndicator />}
         </ScrollView>
     )
