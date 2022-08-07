@@ -19,7 +19,7 @@ interface DetailPageData {
 const DetailPage = () => {
     const navigation = useNavigation();
     const route = useRoute();
-    const { title, year, duration, plot, posterUrl } = route.params;
+    const { title, year, duration, director, genres, plot, posterUrl } = route.params;
 
     useEffect(() => {
         navigation.setOptions({
@@ -42,6 +42,8 @@ const DetailPage = () => {
                 <View style={styles.basicInfoContainer}>
                     <Text style={styles.infoText}><Text style={styles.infoBoldText}>Year:</Text> {year}</Text>
                     <Text style={styles.infoText}><Text style={styles.infoBoldText}>Duration:</Text> {duration} min</Text>
+                    <Text style={styles.infoText}><Text style={styles.infoBoldText}>Director:</Text> {director}</Text>
+                    <Text style={styles.infoText}><Text style={styles.infoBoldText}>Genres:</Text> {genres.map((genre: string) => { return (<Text key={genre}> {genre} </Text>) })}</Text>
                 </View>
                 <Text style={styles.infoText}><Text style={styles.infoBoldText}>Plot:</Text> {plot}</Text>
             </View>
