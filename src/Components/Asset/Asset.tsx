@@ -18,12 +18,13 @@ const Asset = ({ title, imageURL, data }: Asset) => {
     }
     //console.log(data)
     return (
-        <Pressable onPress={onPressHandler}>
+        <Pressable onPress={onPressHandler} style={styles.assetContainer}>
             <Image
                 style={styles.image}
                 source={{ uri: `${imageURL}` }}
+                resizeMode='cover'
             />
-            <Text>{title}</Text>
+            <Text style={styles.assetTitle}>{title}</Text>
         </Pressable>
     )
 }
