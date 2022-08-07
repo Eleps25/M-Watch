@@ -9,7 +9,7 @@ interface Asset {
 }
 
 const Asset = ({ title, imageURL, data }: Asset) => {
-    console.log(data)
+    //console.log(data)
     return (
         <Pressable onPress={() => { console.log("Pressed") }}>
             <Image
