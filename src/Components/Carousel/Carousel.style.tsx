@@ -6,7 +6,8 @@ const styles = StyleSheet.create({
     },
     carouselTitle: {
         paddingBottom: 10,
-        fontSize: 25
+        fontSize: 25,
+        fontWeight: 'bold'
     }
 })
 

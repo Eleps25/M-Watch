@@ -39,8 +39,10 @@ const DetailPage = () => {
                 </ImageBackground>
             </View>
             <View style={styles.infoContainer}>
-                <Text style={styles.infoText}><Text style={styles.infoBoldText}>Year:</Text> {year}</Text>
-                <Text style={styles.infoText}><Text style={styles.infoBoldText}>Duration:</Text> {duration} min</Text>
+                <View style={styles.basicInfoContainer}>
+                    <Text style={styles.infoText}><Text style={styles.infoBoldText}>Year:</Text> {year}</Text>
+                    <Text style={styles.infoText}><Text style={styles.infoBoldText}>Duration:</Text> {duration} min</Text>
+                </View>
                 <Text style={styles.infoText}><Text style={styles.infoBoldText}>Plot:</Text> {plot}</Text>
             </View>
         </View>

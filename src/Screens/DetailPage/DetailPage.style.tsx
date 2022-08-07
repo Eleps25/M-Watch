@@ -18,6 +18,9 @@ const styles = StyleSheet.create({
         paddingHorizontal: 10,
         paddingVertical: 25,
     },
+    basicInfoContainer: {
+        paddingBottom: 20
+    },
     infoText: {
         fontSize: 16
     },
