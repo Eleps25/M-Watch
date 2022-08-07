@@ -1,6 +1,7 @@
 import { View, Text, ImageBackground } from 'react-native';
 import { useRoute, useNavigation } from '@react-navigation/native';
 import { useEffect } from 'react';
+import { RouteProp } from '@react-navigation/native';
 
 import styles from './DetailPage.style'
 
@@ -18,7 +19,7 @@ interface DetailPageData {
 
 const DetailPage = () => {
     const navigation = useNavigation();
-    const route = useRoute();
+    const route: RouteProp<{ params: DetailPageData }> = useRoute();
     const { title, year, duration, director, genres, plot, posterUrl } = route.params;
 
     useEffect(() => {
