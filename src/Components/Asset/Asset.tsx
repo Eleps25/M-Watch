@@ -1,5 +1,8 @@
 import { Pressable, Text, Image } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+
+import { StackParams } from '../../Navigation/NavigationRoutes';
 
 import styles from './Asset.style'
 
@@ -9,8 +12,9 @@ interface Asset {
     data: any
 }
 
+
 const Asset = ({ title, imageURL, data }: Asset) => {
-    const navigation = useNavigation();
+    const navigation = useNavigation<NativeStackNavigationProp<StackParams>>();
     const onPressHandler = () => {
         navigation.navigate('DetailPage', {
             ...data
