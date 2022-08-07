@@ -24,8 +24,8 @@ const Carousel = ({ title, items }: Carousel) => {
         return <Asset title={itemData.item.title} imageURL={itemData.item.posterUrl} data={itemData.item} />
     }
     return (
-        <View>
-            <Text>{title}</Text>
+        <View style={styles.carouselContainer}>
+            <Text style={styles.carouselTitle}>{title}</Text>
             <FlatList
                 data={items}
                 keyExtractor={(item: any) => item.title}
