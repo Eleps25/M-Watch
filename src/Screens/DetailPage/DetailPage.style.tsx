@@ -1,9 +1,10 @@
 import { StyleSheet } from 'react-native';
+import { Device } from '../../Vars';
 
 const styles = StyleSheet.create({
     image: {
-        width: 200,
-        height: 250
+        width: Device.width,
+        height: Device.height / 2
     }
 })
 
