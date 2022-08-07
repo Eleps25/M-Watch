@@ -4,10 +4,12 @@ import styles from './Asset.style'
 
 interface Asset {
     title: string,
-    imageURL: string
+    imageURL: string,
+    data: any
 }
 
-const Asset = ({ title, imageURL }: Asset) => {
+const Asset = ({ title, imageURL, data }: Asset) => {
+    console.log(data)
     return (
         <Pressable onPress={() => { console.log("Pressed") }}>
             <Image

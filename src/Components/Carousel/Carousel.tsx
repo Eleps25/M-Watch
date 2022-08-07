@@ -21,7 +21,7 @@ interface Carousel {
 
 const Carousel = ({ title, items }: Carousel) => {
     const renderAsset = (itemData: any) => {
-        return <Asset title={itemData.item.title} imageURL={itemData.item.posterUrl} />
+        return <Asset title={itemData.item.title} imageURL={itemData.item.posterUrl} data={itemData.item} />
     }
     return (
         <View>
